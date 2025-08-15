@@ -1,0 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-y: auto; /* Permite scroll vertical */
+  min-height: 100vh; /* Asegura que la página pueda crecer si es necesario */
+  padding-top: 80px; /* Ajusta según la altura de la navbar */
+}
+
+.home {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}

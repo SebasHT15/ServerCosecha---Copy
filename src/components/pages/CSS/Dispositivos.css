@@ -1,0 +1,582 @@
+/* 🌟 Contenedor Principal */
+.dispositivos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    background: radial-gradient(circle, rgba(0, 20, 40, 1) 10%, rgba(0, 10, 20, 1) 90%);
+    padding: 40px;
+}
+
+/* 📌 Título Principal */
+.title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #00ff80;
+    text-shadow: 0 0 15px #00ff80;
+    margin-bottom: 30px;
+}
+
+/* 🎛️ Panel de Control */
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* 📜 Panel de Agregar Dispositivo */
+.control-panel {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    max-width: 350px;
+    text-align: center;
+    
+}
+
+/* 📌 Formulario de Agregar Dispositivo */
+.control-panel input,
+.control-panel select {
+    width: 90%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.control-panel input:focus,
+.control-panel select:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+    outline: none;
+}
+
+/* 📌 Botón de Agregar */
+.control-panel button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #00ff80, #00cc66);
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+}
+
+.control-panel button:hover {
+    background: rgba(0, 255, 128, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00ff80;
+}
+
+/* 📡 Contenedor de la Lista de Dispositivos */
+.device-list-container {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 800px;
+}
+
+/* 🔍 Barra de Búsqueda y Filtro */
+.filter-section {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-section input,
+.filter-section select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+    width: 250px;
+}
+
+.filter-section input:focus,
+.filter-section select:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+    outline: none;
+}
+
+/* 📌 Lista de Dispositivos */
+.device-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 📡 Tarjeta de Dispositivo */
+.device-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.device-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(0, 255, 128, 1);
+}
+
+/* 📌 Botones dentro de las tarjetas */
+.btn-delete,
+.btn-edit {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* 🎨 Botón de eliminar */
+.btn-delete {
+    background: linear-gradient(90deg, #ff4d4d, #cc0000);
+    border: 2px solid rgba(255, 0, 0, 0.8);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+.btn-delete:hover {
+    background: rgba(255, 0, 0, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+}
+
+/* 🎨 Botón de editar */
+.btn-edit {
+    background: linear-gradient(90deg, #00ccff, #0077cc);
+    border: 2px solid rgba(0, 204, 255, 0.8);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.8);
+}
+
+.btn-edit:hover {
+    background: rgba(0, 204, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 204, 255, 1);
+}
+
+/* 📌 Modal de Edición */
+.edit-device-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 20, 40, 0.98);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(12px);
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* 📌 Encabezado */
+.edit-device-modal h2 {
+    color: #00ff80;
+    text-shadow: 0 0 12px #00ff80;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* 📌 Campos de entrada */
+.edit-device-modal input,
+.edit-device-modal select {
+    width: 85%; /* 🔹 Hace que todos los inputs y selects tengan el mismo ancho */
+    max-width: 280px; /* 🔹 Limita el ancho para que no sean demasiado grandes */
+    padding: 10px; /* 🔹 Reduce el padding para que se vean más compactos */
+    margin: 8px auto; /* 🔹 Centra los elementos y añade separación */
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 128, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: inset 0px 0px 8px rgba(0, 255, 128, 0.4);
+}
+
+.edit-device-modal input::placeholder,
+.edit-device-modal select {
+    color: #333;
+    font-weight: 500;
+}
+
+.edit-device-modal input:focus,
+.edit-device-modal select:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 12px #00ff80;
+    outline: none;
+}
+
+/* 📌 Botones */
+.edit-device-modal button {
+    margin-top: 15px;
+    padding: 12px;
+    width: 100%;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* 🎨 Botón de Guardar */
+.edit-device-modal button:first-of-type {
+    background: linear-gradient(90deg, #00ff80, #00cc66);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    color: black;
+    text-shadow: 0 0 12px #00ff80;
+    box-shadow: 0 0 12px #00ff80;
+}
+
+.edit-device-modal button:first-of-type:hover {
+    background: rgba(0, 255, 128, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00ff80;
+}
+
+/* 🎨 Botón de Cancelar */
+.edit-device-modal button:last-of-type {
+    background: linear-gradient(90deg, #ff4d4d, #cc0000);
+    border: 2px solid rgba(255, 0, 0, 0.8);
+    color: white;
+    text-shadow: 0 0 12px #ff4d4d;
+    box-shadow: 0 0 12px #ff4d4d;
+}
+
+.edit-device-modal button:last-of-type:hover {
+    background: rgba(255, 0, 0, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+}
+
+/* 📌 Fondo Oscuro detrás del Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+}
+
+/* 📱 Ajustes Responsivos */
+@media screen and (max-width: 768px) {
+    .edit-device-modal {
+        width: 95%;
+        max-width: 360px;
+        padding: 25px;
+    }
+
+    .edit-device-modal h2 {
+        font-size: 1.6rem;
+    }
+
+    .edit-device-modal input,
+    .edit-device-modal select {
+        font-size: 0.95rem;
+        padding: 12px;
+        box-shadow: inset 0px 0px 8px rgba(0, 255, 128, 0.4);
+    }
+
+    .edit-device-modal button {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .edit-device-modal {
+        width: 98%;
+        max-width: 320px;
+        padding: 20px;
+    }
+
+    .edit-device-modal h2 {
+        font-size: 1.4rem;
+    }
+
+    .edit-device-modal input,
+    .edit-device-modal select {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .edit-device-modal button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+
+/* 📱 Responsivo */
+@media screen and (max-width: 768px) {
+    .panel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-panel,
+    .device-list-container {
+        width: 95%;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-section input,
+    .filter-section select {
+        width: 100%;
+    }
+
+    .device-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* 🌟 Modal de Configuración */
+.config-device-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;  /* Usamos el 90% del ancho en pantallas más pequeñas */
+    max-width: 400px;  /* Limita el ancho máximo del modal */
+    background: rgba(0, 20, 40, 0.95);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(15px);
+    text-align: center;
+    z-index: 1000;
+    box-sizing: border-box; /* Asegura que el padding no exceda el ancho del modal */
+}
+
+/* 📌 Título del Modal */
+.config-device-modal h2 {
+    font-size: 1.6rem;
+    color: #00ff80;
+    text-shadow: 0 0 10px #00ff80;
+    margin-bottom: 10px;
+}
+
+/* 📌 Contenedor de los Inputs */
+.config-device-modal .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+/* 📌 Inputs del Modal (Más pequeños y compactos) */
+.config-device-modal input {
+    width: 85%; /* 🔹 Hace que todos los inputs y selects tengan el mismo ancho */
+    max-width: 280px; /* 🔹 Limita el ancho para que no sean demasiado grandes */
+    padding: 10px; /* 🔹 Reduce el padding para que se vean más compactos */
+    margin: 8px auto; /* 🔹 Centra los elementos y añade separación */
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 128, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: inset 0px 0px 8px rgba(0, 255, 128, 0.4);
+}
+
+/* 📌 Efecto al hacer foco en los Inputs */
+.config-device-modal input:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 8px #00ff80;
+    outline: none;
+}
+
+/* 📌 Botones del Modal */
+.config-device-modal button {
+    margin-top: 12px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* 🎨 Botón Guardar */
+.btn-save {
+    background: linear-gradient(90deg, #00ff80, #00cc66);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    color: black;
+    box-shadow: 0 0 8px #00ff80;
+}
+
+.btn-save:hover {
+    background: rgba(0, 255, 128, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #00ff80;
+}
+
+/* 🎨 Botón Eliminar */
+.btn-delete {
+    background: linear-gradient(90deg, #ff4d4d, #cc0000);
+    border: 2px solid rgba(255, 0, 0, 0.8);
+    color: white;
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+.btn-delete:hover {
+    background: rgba(255, 0, 0, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 1);
+}
+
+/* 🎨 Botón Cancelar */
+.btn-cancel {
+    background: linear-gradient(90deg, #ffcc00, #ff9900);
+    border: 2px solid rgba(255, 204, 0, 0.8);
+    color: black;
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.8);
+}
+
+.btn-cancel:hover {
+    background: rgba(255, 204, 0, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255, 204, 0, 1);
+}
+
+.config-device-modal select {
+    margin-bottom: 15px; /* Añadir margen para separar el selector de los botones */
+}
+
+/* 📱 Responsivo */
+@media screen and (max-width: 768px) {
+    .config-device-modal {
+        width: 90%; /* 90% de la pantalla en dispositivos pequeños */
+        max-width: 95%; /* Asegura que sea aún más pequeño en pantallas muy pequeñas */
+        padding: 18px;
+    }
+
+    .config-device-modal h2 {
+        font-size: 1.4rem;
+    }
+
+    .config-device-modal input {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+
+    .config-device-modal button {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+}
+
+
+
+/* 🌟 Estilo del Botón de Configuración */
+.btn-config {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+/* 🎨 Efecto hover del botón */
+.btn-config:hover {
+    background: rgba(0, 255, 128, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 255, 128, 1);
+}
+
+/* 🎨 Efecto al presionar el botón */
+.btn-config:active {
+    background: rgba(0, 255, 128, 0.8);
+    transform: translateY(1px);
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.7);
+}
+
+/* 📌 Estilo para el select de IsMaster */
+.config-device-modal select {
+    width: 100%;
+    padding: 6px; 
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* 📌 Efecto al hacer foco en el select */
+.config-device-modal select:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 8px #00ff80;
+    outline: none;
+}

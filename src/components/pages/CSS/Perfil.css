@@ -1,0 +1,204 @@
+/* 📌 Estilos Generales */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Fuente futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* 🌟 Contenedor Principal */
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    background: radial-gradient(circle, rgba(0, 20, 40, 1) 10%, rgba(0, 10, 20, 1) 90%);
+    padding: 40px;
+}
+
+/* 🎭 Fondo de partículas animadas */
+.perfil-container::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.2;
+    animation: floatingLights 15s infinite linear;
+    z-index: -1;
+}
+
+@keyframes floatingLights {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50px); }
+}
+
+/* 🏆 Caja del Perfil con efecto futurista */
+.perfil-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px rgba(0, 255, 128, 0.7);
+    max-width: 600px;
+    border: 3px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(20px);
+    text-align: center;
+    animation: fadeSlideIn 1.5s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 🌟 Título con efecto */
+.perfil-box h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+    color: #00ff80;
+    text-shadow: 0 0 15px #00ff80;
+    border-bottom: 2px solid rgba(0, 255, 128, 0.5);
+    padding-bottom: 15px;
+}
+
+/* 📋 Contenedor de Información del Usuario */
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 🔹 Tarjetas de información */
+.perfil-info div {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin: 10px 0;
+    box-shadow: 0px 0px 10px rgba(0, 255, 128, 0.4);
+    transition: transform 0.3s ease-in-out;
+    overflow-wrap: break-word; /* 🔥 Evita que el texto largo sobresalga */
+    word-break: break-word; /* 🔥 Permite cortes en textos largos */
+}
+
+/* 🔹 Iconos futuristas */
+.perfil-info i {
+    color: #00ff80;
+    font-size: 1.8rem;
+    margin-right: 15px;
+    text-shadow: 0 0 15px #00ff80;
+}
+
+/* 🔹 Etiquetas */
+.perfil-info strong {
+    color: #00ff80;
+    text-shadow: 0 0 10px #00ff80;
+    font-size: 1.4rem;
+    margin-right: 5px;
+}
+
+/* 🔹 Texto del usuario (Corrección del email largo) */
+.perfil-info span {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    word-break: break-word; /* 🔥 Permite que los textos largos se dividan en varias líneas */
+    overflow-wrap: break-word; /* 🔥 Evita desbordamiento */
+    max-width: 100%; /* 🔥 Asegura que el texto no sobresalga */
+    text-align: left; /* 🔥 Alinea el texto para evitar desorden */
+}
+
+/* 🚀 Botón futurista con efecto 3D */
+.perfil-box button {
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 1.4rem;
+    color: black;
+    background: linear-gradient(90deg, #00ff80, #00cc66);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 0 15px #00ff80, 0 4px 10px rgba(0, 255, 128, 0.5);
+    margin-top: 30px;
+    transform: perspective(500px) rotateX(10deg);
+}
+
+.perfil-box button:hover {
+    background: rgba(0, 255, 128, 0.9);
+    transform: translateY(-3px) perspective(500px) rotateX(5deg);
+    box-shadow: 0 0 25px #00ff80, 0 6px 15px rgba(0, 255, 128, 0.7);
+}
+
+/* Animación de entrada */
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsividad */
+@media screen and (max-width: 1024px) {
+    .perfil-box {
+        padding: 40px;
+        max-width: 90%;
+    }
+
+    .perfil-box h1 {
+        font-size: 2.5rem;
+    }
+
+    .perfil-info {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .perfil-box {
+        padding: 30px;
+        width: 90%;
+    }
+
+    .perfil-box h1 {
+        font-size: 2.2rem;
+    }
+
+    .perfil-info {
+        font-size: 1.2rem;
+    }
+
+    .perfil-info div {
+        padding: 12px;
+        margin: 10px 0;
+        max-width: 90%; /* 🔥 Ajuste para pantallas pequeñas */
+    }
+
+    .perfil-info strong {
+        font-size: 1.3rem;
+    }
+
+    .perfil-info span {
+        font-size: 1.1rem;
+        word-wrap: break-word; /* 🔥 Evita que los emails largos se desborden */
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .perfil-box button {
+        font-size: 1.2rem;
+        padding: 12px 40px;
+    }
+}
+

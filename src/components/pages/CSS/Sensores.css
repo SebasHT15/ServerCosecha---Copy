@@ -1,0 +1,150 @@
+/* Sensores.css */
+
+.sensores-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sensores-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #007acc;
+}
+
+.device-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.device-list li {
+  list-style: none;
+}
+
+.device-list button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+.device-list button:hover {
+  background-color: #005ea2;
+}
+
+.device-list button.selected {
+  background-color: #004080;
+  font-weight: bold;
+}
+
+.sensores-list {
+  margin-top: 30px;
+}
+
+.sensores-list h2 {
+  color: #005ea2;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.sensores-list ul {
+  padding-left: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.sensores-list ul li {
+  background-color: #275a91;
+  margin-bottom: 8px;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #003366;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------ */
+/* Sección para calibraciones */
+/* ------------------ */
+
+.calibration-section {
+  max-width: 600px;
+  margin: 25px auto 0;
+  background-color: #d6e6f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.calibration-section h3 {
+  text-align: center;
+  color: #004080;
+  margin-bottom: 18px;
+  font-weight: 700;
+}
+
+.calibration-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.calibration-field label {
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 6px;
+}
+
+.calibration-field input[type="text"],
+.calibration-field input[type="number"],
+.calibration-field select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: 1px solid #7ba7d6;
+  font-size: 14px;
+  color: #003366;
+  transition: border-color 0.3s ease;
+}
+
+.calibration-field input[type="text"]:focus,
+.calibration-field input[type="number"]:focus,
+.calibration-field select:focus {
+  border-color: #005ea2;
+  outline: none;
+}
+
+.calibration-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.calibration-buttons button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.calibration-buttons button:hover {
+  background-color: #005ea2;
+}

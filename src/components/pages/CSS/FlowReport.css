@@ -1,0 +1,178 @@
+/* 🌟 Contenedor principal */
+.reportes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    background: radial-gradient(circle, rgba(0, 20, 40, 1) 10%, rgba(0, 10, 20, 1) 90%);
+    padding: 40px;
+}
+
+/* 📌 Título principal */
+.reportes-container h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00ff80;
+    text-shadow: 0 0 15px #00ff80;
+    margin-bottom: 20px;
+}
+
+/* 🔍 Barra de búsqueda */
+.reportes-container input {
+    width: 90%;
+    max-width: 400px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.reportes-container input:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+    outline: none;
+}
+
+/* 📡 Lista de dispositivos */
+.device-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* 📌 Tarjeta de dispositivo */
+.device-card {
+    background: linear-gradient(90deg, #00ff80, #00cc66);
+    color: black;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+}
+
+.device-card:hover {
+    background: rgba(0, 255, 128, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00ff80;
+}
+
+/* 📌 Contenedor de reportes */
+.reportes {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 📌 Título de reportes */
+.reportes h2 {
+    font-size: 1.8rem;
+    color: #00ff80;
+    text-shadow: 0 0 10px #00ff80;
+    margin-bottom: 20px;
+}
+
+/* 📊 Tabla de reportes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(0, 255, 128, 0.5);
+    text-align: center;
+    font-size: 1rem;
+}
+
+th {
+    background: rgba(0, 255, 128, 0.2);
+    color: #00ff80;
+    text-transform: uppercase;
+}
+
+td {
+    color: white;
+}
+
+/* 📂 Botón Exportar Excel */
+/* 📂 Botón Exportar Excel (AMARILLO) */
+.btn-excel {
+    background: linear-gradient(90deg, #FFD700, #FFA500); /* 🟡 De amarillo a naranja */
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 5px #FFD700;
+    box-shadow: 0 0 10px #FFD700;
+    margin: 15px;
+}
+
+.btn-excel:hover {
+    background: rgba(255, 204, 0, 0.9); /* 🟡 Más brillante al pasar el mouse */
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #FFD700;
+}
+
+
+/* 📱 Responsivo */
+@media screen and (max-width: 768px) {
+    .reportes-container {
+        padding: 20px;
+    }
+
+    .reportes-container h1 {
+        font-size: 2rem;
+    }
+
+    .device-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .reportes {
+        width: 95%;
+        padding: 15px;
+    }
+
+    th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .reportes h2 {
+        font-size: 1.5rem;
+    }
+}

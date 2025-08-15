@@ -1,0 +1,202 @@
+/* 🌟 Contenedor Principal */
+.redes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    background: radial-gradient(circle, rgba(0, 20, 40, 1) 10%, rgba(0, 10, 20, 1) 90%);
+    padding: 40px;
+}
+
+/* 📌 Título Principal */
+.title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #00ff80;
+    text-shadow: 0 0 15px #00ff80;
+    margin-bottom: 30px;
+}
+
+/* 🎛️ Panel de Control */
+.panel {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* 📜 Panel de Agregar / Eliminar Redes */
+.control-panel {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    max-width: 350px;
+    text-align: center;
+}
+
+/* 📌 Formulario de Agregar / Eliminar */
+.control-panel input,
+.control-panel select {
+    width: 90%;
+    padding: 10px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.control-panel input:focus,
+.control-panel select:focus {
+    border-color: #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+    outline: none;
+}
+
+/* 📌 Botones */
+.control-panel button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+}
+
+.btn-add {
+    background: linear-gradient(90deg, #00ff80, #00cc66);
+    color: black;
+    text-shadow: 0 0 10px #00ff80;
+    box-shadow: 0 0 10px #00ff80;
+}
+
+.btn-add:hover {
+    background: rgba(0, 255, 128, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px #00ff80;
+}
+
+.btn-delete {
+    background: linear-gradient(90deg, #ff4d4d, #cc0000);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+.btn-delete:hover {
+    background: rgba(255, 0, 0, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+}
+
+.btn-asociar, .btn-desasociar {
+    background: linear-gradient(90deg, #00ccff, #0077cc);
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.8);
+}
+
+.btn-asociar:hover, .btn-desasociar:hover {
+    background: rgba(0, 204, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 204, 255, 1);
+}
+
+/* 📡 Contenedor de la Lista de Redes */
+.red-list-container {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se acomoden mejor */
+    justify-content: center; /* Centra las tarjetas */
+    gap: 20px; /* Espaciado entre las tarjetas */
+}
+
+/* 📌 Lista de Redes */
+.red-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* 📡 Tarjeta de Red */
+.red-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 0.7);
+    border: 2px solid rgba(0, 255, 128, 0.8);
+    backdrop-filter: blur(10px);
+    width: 280px;  /* Mantiene un ancho fijo */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.red-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 25px rgba(0, 255, 128, 1);
+}
+
+/* 📡 Lista de Dispositivos en Red */
+.device-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.device-list li {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin: 8px 0;
+    box-shadow: 0px 0px 10px rgba(0, 255, 128, 0.4);
+    transition: transform 0.3s ease-in-out;
+}
+
+.device-list li:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 15px rgba(0, 255, 128, 1);
+}
+
+/* 📱 Responsivo */
+@media screen and (max-width: 768px) {
+    .panel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-panel,
+    .red-list-container {
+        width: 95%;
+    }
+
+    .red-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+

@@ -1,0 +1,71 @@
+:root {
+    --primary: #00ff80; /* Verde-cian neón */
+    --hover-glow: #00cc66;
+    --text-dark: #242424;
+    --text-light: white;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: "Orbitron", sans-serif;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 0 0 10px var(--primary);
+    box-shadow: 0 0 15px var(--primary);
+}
+
+/* Botón primario con efecto neón */
+.btn--primary {
+    background-color: var(--primary);
+    color: var(--text-dark);
+    border: 2px solid var(--primary);
+}
+
+.btn--primary:hover {
+    background-color: var(--hover-glow);
+    box-shadow: 0 0 25px var(--hover-glow);
+    transform: translateY(-3px);
+}
+
+/* Botón de contorno con efecto futurista */
+.btn--outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    text-shadow: 0 0 8px var(--primary);
+}
+
+.btn--outline:hover {
+    background-color: var(--primary);
+    color: var(--text-dark);
+    box-shadow: 0 0 25px var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Tamaños de los botones */
+.btn--medium {
+    padding: 10px 24px;
+    font-size: 16px;
+}
+
+.btn--large {
+    padding: 14px 32px;
+    font-size: 20px;
+}
+
+/* Animación de pulsación */
+@keyframes glow {
+    0% { box-shadow: 0 0 10px var(--primary); }
+    50% { box-shadow: 0 0 20px var(--hover-glow); }
+    100% { box-shadow: 0 0 10px var(--primary); }
+}
+
+.btn--primary:hover, .btn--outline:hover {
+    animation: glow 1.5s infinite alternate;
+}

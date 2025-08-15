@@ -1,0 +1,104 @@
+/* ReportesHumedad.css */
+
+.reportes-humedad-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background-color: #f5f8fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.reportes-humedad-container h1,
+.reportes-humedad-container h2,
+.reportes-humedad-container h3 {
+  text-align: center;
+  color: #007acc;
+  margin-bottom: 20px;
+}
+
+.device-list,
+.sensor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  padding-left: 0;
+  margin-bottom: 25px;
+  list-style: none;
+}
+
+.device-list li,
+.sensor-list li {
+  list-style: none;
+}
+
+.device-list button,
+.sensor-list button {
+  background-color: #007acc;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+  min-width: 140px;
+  text-align: center;
+}
+
+.device-list button:hover,
+.sensor-list button:hover {
+  background-color: #005ea2;
+}
+
+.device-list button.selected,
+.sensor-list button.selected {
+  background-color: #004080;
+  font-weight: bold;
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.report-table th,
+.report-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+.report-table th {
+  background-color: #007acc;
+  color: white;
+  font-weight: 700;
+}
+
+.report-table tr:nth-child(even) {
+  background-color: #f2f6fc;
+}
+
+.report-table tr:hover {
+  background-color: #e1ebfc;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .device-list button,
+  .sensor-list button {
+    min-width: 100%;
+  }
+
+  .report-table th,
+  .report-table td {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}

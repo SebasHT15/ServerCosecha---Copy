@@ -1,0 +1,168 @@
+.navbar {
+  background: linear-gradient(90deg, #001428, #004455);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 255, 100, 0.2);
+}
+
+.panel-button {
+  display: inline-block;
+  padding: 15px 50px;
+  font-size: 1.4rem;
+  color: white;
+  background: linear-gradient(90deg, #00ff80, #00cc66);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 8px #00ff80;
+  box-shadow: 0 4px 10px rgba(0, 255, 100, 0.4);
+}
+
+.panel-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 255, 100, 0.6);
+}
+
+.navbar-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  text-shadow: 0 0 8px #00ff80;
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.navbar-logo:hover {
+  text-shadow: 0 0 15px #00ff80;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-icon i {
+  font-size: 2.5rem;
+  color: white;
+  transition: transform 0.3s ease, text-shadow 0.3s ease-in-out;
+  text-shadow: 0 0 10px #00ff80;
+}
+
+.profile-icon:hover i {
+  transform: scale(1.1);
+  text-shadow: 0 0 15px #00ff80;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 20, 40, 0.9);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 255, 100, 0.5);
+  min-width: 220px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: background 0.3s ease-in-out;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+  background: rgba(0, 255, 100, 0.2);
+  border-radius: 5px;
+}
+
+.delete-button {
+  color: #ff4444;
+  font-weight: bold;
+}
+
+.delete-button:hover {
+  background: rgba(255, 68, 68, 0.2);
+}
+
+.user-email {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0 0 10px #00ff80;
+  margin-bottom: 10px;
+}
+
+.logout-button {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.logout-button:hover {
+  background: rgba(255, 204, 0, 0.2);
+}
+
+.login-button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  color: black;
+  background: linear-gradient(90deg, #00ff80, #00cc66);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #00ff80;
+  box-shadow: 0 0 15px #00ff80;
+}
+
+.login-button:hover {
+  background: rgba(0, 255, 100, 0.9);
+  transform: translateY(-3px);
+  text-shadow: 0 0 15px #00ff80;
+  box-shadow: 0 0 25px #00ff80;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
