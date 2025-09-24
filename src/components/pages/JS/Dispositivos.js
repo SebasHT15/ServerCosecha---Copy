@@ -212,6 +212,7 @@ useEffect(() => {
           <select value={newType} onChange={(e) => setNewType(e.target.value)}>
             <option value="Humedad">Humedad</option>
             <option value="Flow">Flow</option>
+            <option value="Temperatura">Temperatura</option>
           </select>
           <input
             type="text"
@@ -239,6 +240,7 @@ useEffect(() => {
               <option value="">Todos</option>
               <option value="Humedad">Humedad</option>
               <option value="Flow">Flow</option>
+              <option value="Temperatura">Temperatura</option>
             </select>
           </div>
 
@@ -281,6 +283,7 @@ useEffect(() => {
               <select value={editType} onChange={(e) => setEditType(e.target.value)}>
                 <option value="Humedad">Humedad</option>
                 <option value="Flow">Flow</option>
+                <option value="Temperatura">Temperatura</option>
               </select>
             </div>
 

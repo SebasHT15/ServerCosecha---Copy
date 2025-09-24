@@ -6,6 +6,7 @@ const cors = require("cors");
 // Inicializar Firebase Admin
 admin.initializeApp();
 const db = admin.firestore();
+db.settings({ ignoreUndefinedProperties: true });
 const auth = admin.auth();
 const app = express();
 app.use(cors({ origin: true }));
@@ -336,6 +337,38 @@ app.get("/collections", async (req, res) => {
         res.status(500).json({ error: "Error al obtener colecciones" });
     }
 });
+
+app.post('/campbell-log', async (req, res) => {
+  try {
+    console.log("📡 Petición recibida en /campbell-log");
+    console.log("👉 Headers:", req.headers);
+    console.log("👉 Body:", req.body);
+
+    const allow = [
+      "timestamp","record","VWC_1_Avg","EC_1_Avg","T_1_Avg","P_1_Avg","PA_1_Avg","VR_1_Avg",
+      "VWC_2_Avg","EC_2_Avg","T_2_Avg","P_2_Avg","PA_2_Avg","VR_2_Avg","SEVolt_1_Avg","SEVolt_2_Avg"
+    ];
+
+    const doc = Object.fromEntries(
+      allow.filter(k => req.body[k] !== undefined).map(k => [k, req.body[k]])
+    );
+
+    doc.source = req.body.source || "CR300";
+    doc.createdAt = admin.firestore.FieldValue.serverTimestamp();
+
+    console.log("✅ Documento que se va a guardar:", doc);
+
+    const ref = await db.collection("crtest").add(doc);
+    console.log("✅ Guardado en crtest con ID:", ref.id);
+
+    return res.status(200).json({ ok: true, id: ref.id });
+  } catch (error) {
+    console.error("❌ Error en /campbell-log:", error);
+    return res.status(500).json({ ok: false, error: String(error) });
+  }
+});
+
+
 
 // Exportar la API como una función de Firebase
 exports.api = functions.https.onRequest(app);

@@ -17,8 +17,8 @@ export default function HomeProfile() {
           </div>
 
           <div className="section-card reportes-atmosfericos" onClick={() => navigate("/ReportesHumedad")} style={{ cursor: "pointer" }}>
-            <h2>🌦️ Reportes Humedad</h2>
-            <p>Analiza los datos de humedad obtenidos de sensores IoT.</p>
+            <h2>🌦️ Reportes Agrícola y San Carlos</h2>
+            <p>Analiza los datos de sensores IoT.</p>
           </div>
 
           <div className="section-card reportes-flujo" onClick={() => navigate("/reportesFlujo")} style={{ cursor: "pointer" }}>

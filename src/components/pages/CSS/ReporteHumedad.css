@@ -102,3 +102,43 @@
     padding: 8px 10px;
   }
 }
+
+/* Envuelve la tabla y permite scroll horizontal si es muy ancha */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Tabla responsiva y limpia */
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* que se adapte al contenido */
+}
+
+/* Celdas con padding y sin desbordarse del contenedor padre */
+.report-table th,
+.report-table td {
+  padding: 8px 10px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap; /* evita saltos raros; usa scroll horizontal */
+}
+
+/* Opcional: que el header quede fijo al hacer scroll horizontal */
+.table-wrapper .report-table thead th {
+  position: sticky;
+  top: 0;
+  background: #0b6fbf; /* ajusta a tu paleta */
+  color: #fff;
+  z-index: 1;
+}
+
+/* En pantallas chicas, un pelín más chico el texto para que quepa mejor */
+@media (max-width: 1024px) {
+  .report-table th,
+  .report-table td {
+    font-size: 0.9rem;
+  }
+}
